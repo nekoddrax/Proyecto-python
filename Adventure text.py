@@ -1,5 +1,6 @@
 import os
 import time
+
 arte_ascii = """
   ___      _                 _                _____         _   
  / _ \    | |               | |              |_   _|       | |  
@@ -10,9 +11,10 @@ arte_ascii = """
                                                                 
                                                                 
 """
-print(arte_ascii)
+
 #menu de inicio del juego
 def mostrar_menu():
+    print(arte_ascii)
     print ("Bienvenido a \"Adventure Text\"")
     time.sleep(2)
     print("Hola este es un videojuego proyecto en base a texto en python, \n ideal para que funcione hasta en la más tostadora de las tostadoras y en lo posible en cualquier \n sistema que soporte python 3")
