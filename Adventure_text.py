@@ -11,7 +11,7 @@ arte_ascii = """
                                                                 
                                                                 
 """
-
+#w
 #menu de inicio del juego
 def mostrar_menu():
     print(arte_ascii)
