@@ -1,6 +1,7 @@
 import os
 import time
-
+def limpar_pantalla():
+    os.system('cls' if os.name == 'nt' else 'clear')
 arte_ascii = """
   ___      _                 _                _____         _   
  / _ \    | |               | |              |_   _|       | |  
@@ -28,16 +29,16 @@ def mostrar_menu():
         print("Jugar")
     
     elif opcion == "2":
-        os.system('cls' if os.name == 'nt' else 'clear')
+        limpar_pantalla()
         print("Saber más")
         print("este es un juego realizado por nekoddrax \n proyecto con la finalidad de aprender a programar en python de forma personal :D \n este juego esta planeado que sea gratuito y de código abierto \n para que puedan usar de ejemplo y aprender algunas cosas, \n y/o simplemente criticar de forma contructiva tambien sirve \n")
         input("presiona enter para volver al menú")
-        os.system('cls' if os.name == 'nt' else 'clear')
+        limpar_pantalla()
         mostrar_menu()   
     elif opcion == "3":
+        limpar_pantalla()
         print("Adios :D")
         time.sleep(3)
-        os.system('cls' if os.name == 'nt' else 'clear')
         exit()
 # llamado de la funcion 
 mostrar_menu()
