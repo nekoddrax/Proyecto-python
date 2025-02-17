@@ -23,6 +23,7 @@ def mostrar_menu():
     print("¿cómo funciona el menú?")
     time.sleep(2)
     print("escribe el número de la opción en la que deseas elegir dentro del menú y luego presione ENTER ")
+    time.sleep(2)
     opcion =input("Eligue una opción: \n 1. Jugar \n 2. Saber más \n 3. Salir \n")
 
     if opcion == "1":
