@@ -2,10 +2,10 @@ from actores import Player
 from actores import Enemy
 import os
 import time
-import pygame
+
 def limpar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
-pygame.init()
+
 # Crear instancias de Jugador y Enemigo
 jugador = Player.Jugador()
 enemigo = Enemy.Enemigo()
@@ -14,9 +14,7 @@ while True:
    
     accion = input("Que quieres hacer? \n \n 1. Atacar \n 2. Defender \n 3. Usar poción \n")
     if accion == "1":
-        print("\n")
-        pygame.mixer.music.load('archivos/Sonido_perdido.mp3')
-        pygame.mixer.music.play()
+        print("\n")  
         jugador.atacar()
         time.sleep(2)
         limpar_pantalla()

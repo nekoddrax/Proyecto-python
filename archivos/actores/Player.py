@@ -29,4 +29,4 @@ class Jugador:
             print(f"El jugador usa una poción! La vida del jugador ahora es {self.vida_jugador}")
         else:
             print("No tienes pociones en tu inventario")
-print("hola")
+    
