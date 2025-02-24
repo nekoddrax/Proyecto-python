@@ -2,7 +2,7 @@ from archivos.actores import Player
 from archivos.actores import Enemy
 import os
 import time
-
+import random
 def limpar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -24,6 +24,14 @@ while True:
         accion = input("Que quieres hacer? \n \n 1. Atacar \n 2. Defender \n 3. Usar poción \n")
         if accion == "1":
             print("\n")  
+            Critico = random.randint(0, 100)
+            print("Crítico: ", Critico)
+            if Critico <= jugador.probabilidad_critico:
+                jugador.daño_jugador *= 2
+                
+                print("Critico!") 
+            else:
+                print("fallo")
             enemigo.vida_enemigo -= jugador.daño_jugador 
             print("El jugador ataca y hace ", jugador.daño_jugador, " de daño")
             time.sleep(1.2)
@@ -50,6 +58,7 @@ while True:
 
     def turno_enemigo():
         print("El Moustro ataca y hace ", enemigo.daño_enemigo, " de daño")
+        
         jugador.vida_jugador -= enemigo.daño_enemigo
         time.sleep(1.5)
         limpar_pantalla()

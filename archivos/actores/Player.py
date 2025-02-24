@@ -1,6 +1,6 @@
 import os
 import time
-
+import random
 def limpar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -11,22 +11,17 @@ class Jugador:
         self.defensa_jugador = 20
         self.daño_jugador = 20
         self.probabilidad_estado = 0
-        self.probabilidad_critico = 0
+        self.probabilidad_critico = 50
         self.daño_estado = 0
         self.estado = "normal"
         self.inventario = {"pocion": 1}
 
-    def atacar(self):
-        print("El jugador ataca!")
-
-    def defender(self):
-        print("El jugador se defiende!")
+perro = 10
+def critico():
+    Critico = random.randint(0, 100)
+    print(Critico)
+    if Critico <= perro:
         
-    def usar_pocion(self):
-        if self.inventario["pocion"] > 0:
-            self.vida_jugador += 50
-            self.inventario["pocion"] -= 1
-            print(f"El jugador usa una poción! La vida del jugador ahora es {self.vida_jugador}")
-        else:
-            print("No tienes pociones en tu inventario")
-    
+        print("Critico!") 
+    else:
+        print("fallo")
