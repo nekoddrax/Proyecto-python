@@ -8,10 +8,10 @@ class Jugador:
     def __init__(self):
         self.nivel = 1
         self.vida_jugador = 100
-        self.defensa_jugador = 20
-        self.daño_jugador = 20
-        self.probabilidad_estado = 0
-        self.probabilidad_critico = 50
+        self.defensa_jugador = 5
+        self.daño_jugador = 5
+        self.probabilidad_estado = 100
+        self.probabilidad_critico = 10
         self.daño_estado = 0
         self.estado = "normal"
         self.inventario = {"pocion": 1}
