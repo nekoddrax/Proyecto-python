@@ -1,5 +1,7 @@
 import os
 import time
+def jugar():
+    from archivos import combate
 def limpar_pantalla():
     os.system('cls' if os.name == 'nt' else 'clear')
 arte_ascii = """
@@ -12,10 +14,11 @@ arte_ascii = """
                                                                 
                                                                 
 """
+primera_vez = True
 #w
 #menu de inicio del juego
-def mostrar_menu():
-    print(arte_ascii)
+print(arte_ascii)
+def tutorial():
     print ("Bienvenido a \"Adventure Text\"")
     time.sleep(2)
     print("Hola este es un videojuego proyecto en base a texto en python, \n ideal para que funcione hasta en la más tostadora de las tostadoras y en lo posible en cualquier \n sistema que soporte python 3")
@@ -24,22 +27,28 @@ def mostrar_menu():
     time.sleep(2)
     print("escribe el número de la opción en la que deseas elegir dentro del menú y luego presione ENTER ")
     time.sleep(2)
-    opcion =input("Eligue una opción: \n 1. Jugar \n 2. Saber más \n 3. Salir \n")
+ 
 
+def menu():    
+    opcion =input("Eligue una opción: \n 1. Jugar \n 2. Saber más \n 3. Salir \n")
     if opcion == "1":
-        print("Jugar")
-    
+        print("Disfruta :D")
+        time.sleep(1.3)
+        limpar_pantalla()
+        jugar()    
     elif opcion == "2":
         limpar_pantalla()
         print("Saber más")
         print("este es un juego realizado por nekoddrax \n proyecto con la finalidad de aprender a programar en python de forma personal :D \n este juego esta planeado que sea gratuito y de código abierto \n para que puedan usar de ejemplo y aprender algunas cosas, \n y/o simplemente criticar de forma contructiva tambien sirve \n")
         input("presiona enter para volver al menú")
         limpar_pantalla()
-        mostrar_menu()   
+        menu()   
     elif opcion == "3":
         limpar_pantalla()
         print("Adios :D")
         time.sleep(3)
         exit()
-# llamado de la funcion 
-mostrar_menu()
+if primera_vez == True:
+    tutorial()
+    primera_vez = False
+    menu()

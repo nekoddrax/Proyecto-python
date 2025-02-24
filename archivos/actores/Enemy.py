@@ -3,7 +3,7 @@
 class Enemigo:
     def __init__(self):
         self.vida_enemigo = 100
-        self.daño_enemigo = 5
+        self.daño_enemigo = 25
         self.probabilidad_estado_enemigo = 0
         self.probabilidad_critico_enemigo = 0
         self.estado_enemigo = "normal"
