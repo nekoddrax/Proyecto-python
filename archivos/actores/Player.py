@@ -16,12 +16,35 @@ class Jugador:
         self.estado = "normal"
         self.inventario = {"pocion": 1}
 
-perro = 10
-def critico():
-    Critico = random.randint(0, 100)
-    print(Critico)
-    if Critico <= perro:
-        
-        print("Critico!") 
+
+def tomar_posion(self):
+    if self.inventario["pocion"] > 0:
+        self.vida_jugador += 50
+        self.inventario["pocion"] -= 1
+        print(f"El jugador usa una poción! La vida del jugador ahora es {self.vida_jugador}")
     else:
-        print("fallo")
+        print("No tienes pociones en tu inventario")
+
+def prob_critico(self):
+    Critico = random.randint(0, 100)
+    print("Crítico: ", Critico)            
+    Critico_asertado = False
+    if Critico <= self.probabilidad_critico:
+        self.daño_jugador *= 2
+        Critico_asertado = True
+        print("¡Crítico!")
+    else:
+        print("Fallo")
+
+#Probabilidad de estado
+def prob_estado(self, enemigo):
+    if isinstance(enemigo, Enemigo):
+        Estado = random.randint(0, 100)
+        print("Estado: ", Estado)
+        if Estado <= self.probabilidad_estado:
+            enemigo.estado_enemigo = "envenenado"
+            print("El estado del enemigo es", enemigo.estado_enemigo)
+        else:
+            print("Fallo estado")
+    else:
+        print("El objetivo no es un enemigo")

@@ -29,24 +29,7 @@ while True:
             accion = input("Que quieres hacer? \n \n 1. Atacar \n 2. Defender \n 3. Usar poción \n")
             if accion == "1":
                 print("\n")
-                Estado = random.randint(0, 100)
-                print("Estado: ", Estado)
-                if Estado <= jugador.probabilidad_estado:
-                    enemigo.estado_enemigo = "envenenado"
-                    print("El estado del enemigo es", enemigo.estado_enemigo)
-                else:
-                    print("Fallo estado")
-                    
-                Critico = random.randint(0, 100)
-                print("Crítico: ", Critico)
-                
-                Critico_asertado = False
-                if Critico <= jugador.probabilidad_critico:
-                    jugador.daño_jugador *= 2
-                    Critico_asertado = True
-                    print("¡Crítico!")
-                else:
-                    print("Fallo")
+                                
                 enemigo.vida_enemigo -= jugador.daño_jugador
                 if Critico_asertado:
                     jugador.daño_jugador //= 2
@@ -61,13 +44,8 @@ while True:
                 time.sleep(1.2)
             elif accion == "3":
                 print("\n")
-                if jugador.inventario["pocion"] > 0:
-                    jugador.vida_jugador += 50
-                    jugador.inventario["pocion"] -= 1
-                    print(f"El jugador usa una poción! La vida del jugador ahora es {jugador.vida_jugador}")
-                else:
-                    print("No tienes pociones en tu inventario")
-                    accion_valida = False
+               
+                accion_valida = False
                 time.sleep(1.2)
             else:
                 print("Comando no válido")
