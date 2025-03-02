@@ -29,7 +29,10 @@ while True:
             accion = input("Que quieres hacer? \n \n 1. Atacar \n 2. Defender \n 3. Usar poción \n")
             if accion == "1":
                 print("\n")
-                                
+                Critico_asertado = Player.prob_critico(self=jugador)
+                if Critico_asertado:
+                    jugador.daño_jugador *= 2
+                Player.prob_estado()
                 enemigo.vida_enemigo -= jugador.daño_jugador
                 if Critico_asertado:
                     jugador.daño_jugador //= 2
